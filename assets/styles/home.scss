@@ -29,12 +29,16 @@ body {
         font-style: italic;
     }
 
-    #nouvelle_citation {
+    button {
         background: -webkit-linear-gradient(to right, #66451a, #f8d255);
         background: linear-gradient(to right, #66451a, #f8d255);
         cursor: pointer;
+        border: none;
+        border-radius: 5px;
       }
 }
+
+
 
 
 
