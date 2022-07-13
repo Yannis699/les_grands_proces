@@ -6,9 +6,10 @@
  */
 
 // any CSS you import will output into a single css file (app.css in this case)
-import './styles/app.css';
+
+import "./styles/app.scss";
 require("bootstrap");
-import 'bootstrap/dist/js/bootstrap.bundle';
+
 
 // start the Stimulus application
 
