@@ -1,0 +1,41 @@
+
+body {
+    background: -webkit-linear-gradient(to right, #710511, black);
+    background: linear-gradient(to left, #710511, black);
+}
+
+.citation_container {
+    #citation {
+        font-size: 2em;
+        font-family: 'Franklin', curve;
+        line-height: 1.3em;
+        letter-spacing: 1px;
+        &:before {
+            content: open-quote;
+        }
+
+        &:after {
+            content: close-quote;
+        }
+      } 
+
+    .trait_citation {
+        background-color: black;
+        padding: 0.11em;
+    }
+    
+    #auteur {
+        font-size: 1.5em;
+        font-style: italic;
+    }
+
+    #nouvelle_citation {
+        background: -webkit-linear-gradient(to right, #66451a, #f8d255);
+        background: linear-gradient(to right, #66451a, #f8d255);
+        cursor: pointer;
+      }
+}
+
+
+
+
