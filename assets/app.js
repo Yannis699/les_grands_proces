@@ -23,6 +23,8 @@ window.onload = () => {
         ["Je suis Jésus Christ, que vous l’acceptiez ou pas, je m’en fous.", "Charles Manson"],
         ["C'est bien la première fois qu'on m'aura pour douze balles.", "Mata Hari"],
         ["Oh ! chère France, toi que j'aime de toute mon âme, de tout mon coeur, toi à qui j'ai consacré toutes mes forces, toute mon intelligence, comment a-t-on pu m'accuser d'un crime aussi épouvantable ?", "Alfred Dreyfus"]
+        ["Vous les Américains, vous traitez le tiers monde comme un paysan irakien traite sa nouvelle épouse. Trois jours de lune de miel, puis c'est parti pour les champs.", "Saddam Hussein"],
+        ["Marat pervertissait la France. J’ai tué un homme pour en sauver cent mille, un scélérat pour sauver des innocents, une bête féroce pour donner le repos à mon pays. J’étais républicaine bien avant la Révolution.", "Charlotte Corday"]
     ];
 // Variables
 
