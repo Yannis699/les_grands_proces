@@ -1,0 +1,14 @@
+{% extends "base.html.twig" %}
+
+{% block title %} {{question.title }} {% endblock %}
+
+{% block body %}
+   <div class="show_container">
+     <div class="d-flex flex-row-nowrap align-items-center">
+          <h1 class="pb-2"> {{question.title}} </h1>
+          <div class="question-tag"> Question </div>
+          <img class="avatar" src="https://randomuser.me/api/portraits/men/65.jpg">
+     </div>
+     <p> {{question.content}} </p> 
+   </div>
+{% endblock %}
