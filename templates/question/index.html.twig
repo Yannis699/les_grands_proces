@@ -14,6 +14,13 @@
         <a> Mes réponses</a>
     </ul>
 </div>
-
-{{ form(form_ask_question) }}
+    <h1 class="form_ask_title"> Posez votre question </h1>
+    {{ form_start(form_ask_question)}}
+    <div class="form_ask_question m-3">
+        {{ form_rest(form_ask_question)}}
+    </div>
+        <button>
+            Demander une réponse
+        </button>
+        {{ form_end(form_ask_question) }}
 {% endblock %}
