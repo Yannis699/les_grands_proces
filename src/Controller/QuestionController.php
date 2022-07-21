@@ -17,7 +17,7 @@ class QuestionController extends AbstractController
     #[Route('/question/ask', name: 'question_form')]
     public function index(Request $request, EntityManagerInterface $em): Response
     {   
-        $this->addFlash('success', 'Votre question a bien été soumise');
+        
         $question = new Question();
         $formQuestion = $this->createForm(QuestionType::class, $question);
 
@@ -29,6 +29,8 @@ class QuestionController extends AbstractController
            $question->setCreatedAt(new \DateTimeImmutable());
            $em->persist($question);
            $em->flush();
+           $this->addFlash('success', 'Votre question a bien été soumise');
+           
            return $this->redirectToRoute('home');
         }
 
