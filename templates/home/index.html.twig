@@ -32,12 +32,12 @@
 
   			{% for success, messages in app.flashes %}
 					{% for message in messages %}
-						<div class="flash_success fs-2 alert alert-{{ success }}">
+						<div class="flash_success flash_message fs-2 alert alert-{{ success }}">
 							{{ message }}
 						</div>
 					{% endfor %}
 				{% endfor %}
-        
+
     <div class="container-fluid mt-3">
         <div class="row align-items-center justify-content-end citation_container">
             <img class="img-fluid landru_img" src="{{ asset('') }}" alt="Photo de Désiré Landru">
