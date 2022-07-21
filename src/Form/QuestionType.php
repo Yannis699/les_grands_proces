@@ -13,8 +13,8 @@ class QuestionType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('title', TextType::class)
-            ->add('content', TextareaType::class);
+            ->add('title', TextType::class, ['label' => 'Titre'])
+            ->add('content', TextareaType::class, ['label' => 'Contenu']);
         ;
     }
 
