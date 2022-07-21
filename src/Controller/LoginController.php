@@ -18,6 +18,7 @@ class LoginController extends AbstractController
     public function signup(Request $request, EntityManagerInterface $em, UserPasswordHasherInterface $passwordHasher): Response
     {
         $user = new User();
+        
         $userForm = $this->createForm(UserType::class, $user);
         $userForm->handleRequest($request);
             if($userForm->isSubmitted() && $userForm->isValid()) {

@@ -30,6 +30,7 @@
                <p class=""> {{comment.content}} </p>
           </div>
      {% endfor %}
+     {% if form is defined %}
      <h3> Votre réponse </h3>
      <div class="comment_form">
           {{form_start(comment_form)}}
@@ -37,6 +38,7 @@
                <button class=""> soumettre</button>
           {{form_end(comment_form)}}
      </div>
+     {% endif %}
    </div>
 
 {% endblock %}
