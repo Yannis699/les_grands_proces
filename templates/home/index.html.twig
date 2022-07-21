@@ -1,0 +1,96 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+
+ <nav> 
+      <div class="menu-icon">
+        <span class="fas fa-bars"></span>
+      </div>
+
+      <div class="logo">Les grands procès</div>
+
+      <div class="nav-items">
+        <li><a href="#">Accueil</a></li>
+        <li><a href="#">Forum</a></li>
+      </div>
+
+      <div class="search-icon">
+        <span class="fas fa-search"></span>
+      </div>
+
+      <div class="cancel-icon">
+        <span class="fas fa-times"></span>
+      </div>
+
+      <form action="#">
+        <input type="search" class="search-data" placeholder="Recherche par articles de presse" required>
+        <button type="submit" class="fas fa-search"></button>
+      </form>
+</nav> 
+
+  			{% for success, messages in app.flashes %}
+					{% for message in messages %}
+						<div class="flash_success flash_message fs-2 alert alert-{{ success }}">
+							{{ message }}
+						</div>
+					{% endfor %}
+				{% endfor %}
+
+    <div class="container-fluid mt-3">
+        <div class="row align-items-center justify-content-end citation_container">
+            <img class="img-fluid landru_img" src="{{ asset('') }}" alt="Photo de Désiré Landru">
+            <div class="col-12 col-md-8 col-lg-8 p-3">
+                <div class="bg-light shadow p-5">
+                    <div id="citation" class="text-center">
+                        Si les femmes que j'ai connues ont quelque chose à me reprocher, elles n'ont qu'à déposer plainte!
+                    </div>
+                    <div class=" trait_citation w-25 mx-auto my-5"></div>
+                    <div id="auteur" class="text-center">
+                        Henri Désiré Landru
+                    </div>
+                     <div class="d-flex justify-content-end">
+                        <button id="nouvelle_citation" class="col-3 mt-3 text-center p-3 text-white font-weight-bold text-uppercase"> Nouvelle citation </button>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+
+    <div class="container-fluid">
+        <h1 class="article_une_titre text-white mt-3"> Les articles à la une </h1>
+        <ul class="medaillon-grid">
+			<li>
+				<div class="medaillon-item medaillon-img-1">
+					<div class="medaillon-info">
+						<h3>Le procès des templiers</h3>
+						<p>Par Yannis Cristini <a href="#">Lire l'article</a></p>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="medaillon-item medaillon-img-2">
+					<div class="medaillon-info">
+						<h3>Les procès de Salem</h3>
+						<p> Yannis Cristini <a href="#">Lire l'article</a></p>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="medaillon-item medaillon-img-3">
+					<div class="medaillon-info">
+						<h3>Erzsebeth Báthory</h3>
+						<p> Yannis Cristini <a href="#">Lire l'article</a></p>
+					</div>
+				</div>
+			</li>
+		</ul>
+    </div>
+
+    <footer class="p-2 d-flex justify-content-center align-items-center">
+      <div class="footer_content">
+        <p> © Les grands procès, 2022 </p>
+      </div>
+    </footer>
+{% endblock %}
