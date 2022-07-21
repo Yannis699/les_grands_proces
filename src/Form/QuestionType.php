@@ -22,6 +22,7 @@ class QuestionType extends AbstractType
     {
         $resolver->setDefaults([
             // Configure your form options here
+            'data' => Question::class
         ]);
     }
 }
