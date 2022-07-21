@@ -3,6 +3,13 @@
 {% block title %} {{question.title }} {% endblock %}
 
 {% block body %}
+  			{% for success, messages in app.flashes %}
+					{% for message in messages %}
+						<div class="flash_success flash_message fs-2 alert alert-{{ success }}">
+							{{ message }}
+						</div>
+					{% endfor %}
+				{% endfor %}
    <div class="show_container">
      <div class="d-flex flex-row-nowrap align-items-center">
           <h1 class="pb-2"> {{question.title}} </h1>
