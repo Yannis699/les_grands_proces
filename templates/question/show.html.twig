@@ -3,6 +3,7 @@
 {% block title %} {{question.title }} {% endblock %}
 
 {% block body %}
+     {% include ('home/partials/_nav.html.twig') %}
   	{% for success, messages in app.flashes %}
 		{% for message in messages %}
 			<div class="flash_success flash_message fs-2 alert alert-{{ success }}">

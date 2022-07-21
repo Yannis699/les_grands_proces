@@ -3,32 +3,7 @@
 {% block title %}Accueil{% endblock %}
 
 {% block body %}
-
- <nav> 
-      <div class="menu-icon">
-        <span class="fas fa-bars"></span>
-      </div>
-
-      <div class="logo">Les grands procès</div>
-
-      <div class="nav-items">
-        <li><a href="#">Accueil</a></li>
-        <li><a href="#">Forum</a></li>
-      </div>
-
-      <div class="search-icon">
-        <span class="fas fa-search"></span>
-      </div>
-
-      <div class="cancel-icon">
-        <span class="fas fa-times"></span>
-      </div>
-
-      <form action="#">
-        <input type="search" class="search-data" placeholder="Recherche par articles de presse" required>
-        <button type="submit" class="fas fa-search"></button>
-      </form>
-</nav> 
+  {% include ('home/partials/_nav.html.twig') %}
 
   			{% for success, messages in app.flashes %}
 					{% for message in messages %}

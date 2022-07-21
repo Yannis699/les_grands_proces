@@ -9,7 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ForumController extends AbstractController
 {
-    #[Route('/forum', name: 'app_forum')]
+    #[Route('/forum', name: 'forum')]
     public function index(QuestionRepository $questionRepository): Response
     {
         $questions = $questionRepository->findAll();
