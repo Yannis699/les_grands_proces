@@ -8,6 +8,11 @@ body {
     height: 100vh; 
 }
 
+.article_news {
+  padding-left : 10px;
+}
+
+
 .citation_container {
     #citation {
         font-size: 2em;
@@ -34,8 +39,8 @@ body {
     }
 
     button {
-        background: -webkit-linear-gradient(to right, #66451a, #f8d255);
-        background: linear-gradient(to right, #66451a, #f8d255);
+        background: -webkit-linear-gradient(to right, #66451a, #ffd036);
+        background: linear-gradient(to right, #66451a, #ffd036);
         cursor: pointer;
         border: none;
         border-radius: 5px;
@@ -140,27 +145,6 @@ body {
 .medaillon-item:hover .medaillon-info p {
 	opacity: 1;
 }
-
-  .sidebar_nav a {
-    margin-bottom: 10px;
-    padding: 10px;
-    cursor: pointer;
-  }
-
-  .sidebar_nav a i {
-    color: yellow;
-    font-size: 15px;
-  }
-
-  .side_active {
-    border-left: 5px solid red;
-    background-color: orange;
-    margin-bottom: 5px;
-    &:hover {
-      opacity: 0.8;
-      transition: opacity 0.3s;
-    }
-  }
 
   .flash_message {
     padding: 20px;

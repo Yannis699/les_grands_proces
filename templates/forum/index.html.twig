@@ -4,18 +4,7 @@
 
 {% block body %}
     {% include ('home/partials/_nav.html.twig') %}
-
-<div class="">
-    <a href="{{path('question_form')}}">
-        <i class="">
-        <span> Poser une question </span>
-    </a>
-    <ul class="sidebar_nav py-3"> 
-        <li class="side_active"> Liste des questions </li>
-        <li> Mes questions </li>
-        <li> Mes réponses</li>
-    </ul>
-</div>
+    {% include ('home/partials/_sidebar.html.twig') %}
 
 <ul>
     {% for question in questions %}
