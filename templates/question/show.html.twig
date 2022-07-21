@@ -10,5 +10,13 @@
           <img class="avatar" src="https://randomuser.me/api/portraits/men/65.jpg">
      </div>
      <p> {{question.content}} </p> 
+     <br>
+     <h3> Votre réponse </h3>
+     <div class="comment_form">
+          {{form_start(comment_form)}}
+          {{form_rest(comment_form)}}
+               <buttons class="btn btn-primary"> soumettre</buttons
+          {{form_end(comment_form)}}
+     </div>
    </div>
 {% endblock %}
