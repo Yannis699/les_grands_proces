@@ -10,11 +10,36 @@
 import "./styles/app.scss";
 require("bootstrap");
 
+require("@fortawesome/fontawesome-free/css/all.min.css");
+require("@fortawesome/fontawesome-free/js/all.js");
 
 // start the Stimulus application
 
 // Tableau de citations
 
+const menuBtn = document.querySelector(".menu-icon span");
+const searchBtn = document.querySelector(".search-icon");
+const cancelBtn = document.querySelector(".cancel-icon");
+const items = document.querySelector(".nav-items");
+const form = document.querySelector("form");
+menuBtn.onclick = ()=>{
+  items.classList.add("active");
+  menuBtn.classList.add("hide");
+  searchBtn.classList.add("hide");
+  cancelBtn.classList.add("show");
+}
+cancelBtn.onclick = ()=>{
+  items.classList.remove("active");
+  menuBtn.classList.remove("hide");
+  searchBtn.classList.remove("hide");
+  cancelBtn.classList.remove("show");
+  form.classList.remove("active"); 
+}
+searchBtn.onclick = ()=>{
+  form.classList.add("active");
+  searchBtn.classList.add("hide");
+  cancelBtn.classList.add("show");
+}
 
 window.onload = () => {
 
@@ -25,7 +50,8 @@ window.onload = () => {
         ["Oh ! chère France, toi que j'aime de toute mon âme, de tout mon coeur, toi à qui j'ai consacré toutes mes forces, toute mon intelligence, comment a-t-on pu m'accuser d'un crime aussi épouvantable ?", "Alfred Dreyfus"]
         ["Vous les Américains, vous traitez le tiers monde comme un paysan irakien traite sa nouvelle épouse. Trois jours de lune de miel, puis c'est parti pour les champs.", "Saddam Hussein"],
         ["Marat pervertissait la France. J’ai tué un homme pour en sauver cent mille, un scélérat pour sauver des innocents, une bête féroce pour donner le repos à mon pays. J’étais républicaine bien avant la Révolution.", "Charlotte Corday"]
-    ];
+        ["Vous parlez toujours de ma tête, Monsieur l'avocat général. Je regrette de n'en avoir pas plusieurs à vous offrir !", "Henri-Désiré Landru"]
+    ];  
 // Variables
 
 //Citation affichée

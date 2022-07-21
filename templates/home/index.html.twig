@@ -3,7 +3,35 @@
 {% block title %}Accueil{% endblock %}
 
 {% block body %}
-    <div class="container-fluid">
+
+ <nav> 
+      <div class="menu-icon">
+        <span class="fas fa-bars"></span>
+      </div>
+
+      <div class="logo">Les grands procès</div>
+
+      <div class="nav-items">
+        <li><a href="#">Accueil</a></li>
+        <li><a href="#">Forum</a></li>
+      </div>
+
+      <div class="search-icon">
+        <span class="fas fa-search"></span>
+      </div>
+
+      <div class="cancel-icon">
+        <span class="fas fa-times"></span>
+      </div>
+
+      <form action="#">
+        <input type="search" class="search-data" placeholder="Recherche par articles de presse" required>
+        <button type="submit" class="fas fa-search"></button>
+      </form>
+
+    </nav> 
+
+    <div class="container-fluid mt-3">
         <div class="row align-items-center justify-content-end citation_container">
             <img class="img-fluid landru_img" src="{{ asset('') }}" alt="Photo de Désiré Landru">
             <div class="col-12 col-md-8 col-lg-8 p-3">
@@ -52,4 +80,10 @@
 			</li>
 		</ul>
     </div>
+
+    <footer class="p-2 d-flex justify-content-center align-items-center">
+      <div class="footer_content">
+        <p> © Les grands procès, 2022 </p>
+      </div>
+    </footer>
 {% endblock %}
