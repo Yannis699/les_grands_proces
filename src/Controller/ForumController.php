@@ -13,6 +13,7 @@ class ForumController extends AbstractController
     {
         $questions = [
             [
+                'id' => '1',
                 'title' => 'Pourquoi Landru a-t-il décidé de tuer ses femmes ? ', 
                 'content' => 'Voici ma question je me demande, Voici ma question je me demandeVoici ma question je me demandeVoici ma question je me demandeVoici ma question je me demandeVoici ma question je me demandeVoici ma question je me demandeVoici ma question je me demandeVoici ma question je me demande',
                 'upvotes' => 20, 
@@ -23,6 +24,7 @@ class ForumController extends AbstractController
                 'answers' => 15
             ],
             [
+                'id' => '2',
                 'title' => 'Ceci est ma question 2', 
                 'content' => 'test content 2',
                 'upvotes' => 25, 
@@ -34,6 +36,7 @@ class ForumController extends AbstractController
 
             ],
             [
+                'id' => '3',
                 'title' => 'Ceci est ma question 2', 
                 'content' => 'test content 3',
                 'upvotes' => 23, 
