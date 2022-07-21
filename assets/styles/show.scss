@@ -1,3 +1,15 @@
+.show_container {
+    background-color: white!important;
+    border-radius: 5px;
+    color: black;
+}
+
 .avatar {
     border-radius: 50%;
+    max-width: 100px;
+}
+
+.question_response {
+    background: rgb(232, 232, 232);
+    margin-bottom: 20px;
 }
