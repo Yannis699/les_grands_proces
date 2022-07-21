@@ -339,4 +339,23 @@ nav{
     background-color: grey;
   }
 
+  .sidebar_nav li {
+    margin-bottom: 10px;
+    padding: 10px;
+    cursor: pointer;
+  }
 
+  .sidebar_nav li i {
+    color: yellow;
+    font-size: 15px;
+  }
+
+  .side_active {
+    border-left: 5px solid red;
+    background-color: orange;
+    margin-bottom: 5px;
+    &:hover {
+      opacity: 0.8;
+      transition: opacity 0.3s;
+    }
+  }
