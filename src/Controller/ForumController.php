@@ -11,7 +11,7 @@ class ForumController extends AbstractController
     #[Route('/forum', name: 'app_forum')]
     public function index(): Response
     {
-        $this->addFlash('success', 'Votre question a bien été soumise');
+        
         $questions = [
             [
                 'id' => '1',

@@ -28,9 +28,16 @@
         <input type="search" class="search-data" placeholder="Recherche par articles de presse" required>
         <button type="submit" class="fas fa-search"></button>
       </form>
+</nav> 
 
-    </nav> 
-
+  			{% for success, messages in app.flashes %}
+					{% for message in messages %}
+						<div class="flash_success fs-2 alert alert-{{ success }}">
+							{{ message }}
+						</div>
+					{% endfor %}
+				{% endfor %}
+        
     <div class="container-fluid mt-3">
         <div class="row align-items-center justify-content-end citation_container">
             <img class="img-fluid landru_img" src="{{ asset('') }}" alt="Photo de Désiré Landru">
