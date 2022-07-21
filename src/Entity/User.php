@@ -8,6 +8,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Checkings;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
@@ -18,6 +19,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?int $id = null;
 
     #[ORM\Column(length: 180, unique: true)]
+    #[Checkings\Email(message: 'Veuillez rentrer une adresse mail valide.')]
+    #[Checkings\NotBlank(message: 'Veuillez renseigner une adresse')]
     private ?string $email = null;
 
     #[ORM\Column]
@@ -27,12 +30,16 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @var string The hashed password
      */
     #[ORM\Column]
+    #[Checkings\Length( min: 5, minMessage: 'Le mot de passe doit faire au moins 5 caractères')]
+    #[Checkings\NotBlank(message: 'Veuillez renseigner un mot de passe')]
     private ?string $password = null;
 
     #[ORM\Column(length: 100)]
+    #[Checkings\NotBlank(message: 'Veuillez renseigner votre prénom')]
     private ?string $firstname = null;
 
     #[ORM\Column(length: 100)]
+    #[Checkings\NotBlank(message: 'Veuillez renseigner votre nom')]
     private ?string $lastname = null;
 
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Question::class, orphanRemoval: true)]
@@ -42,6 +49,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private Collection $comments;
 
     #[ORM\Column(length: 255)]
+    #[Checkings\Url(message: 'Votre image doit provenir d\'une url')]
     private ?string $picture = null;
 
     public function __construct()
