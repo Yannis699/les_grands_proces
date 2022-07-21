@@ -3,13 +3,14 @@
 {% block title %} {{question.title }} {% endblock %}
 
 {% block body %}
-  			{% for success, messages in app.flashes %}
-					{% for message in messages %}
-						<div class="flash_success flash_message fs-2 alert alert-{{ success }}">
-							{{ message }}
-						</div>
-					{% endfor %}
-				{% endfor %}
+  	{% for success, messages in app.flashes %}
+		{% for message in messages %}
+			<div class="flash_success flash_message fs-2 alert alert-{{ success }}">
+				{{ message }}
+		     </div>
+		{% endfor %}
+	{% endfor %}
+
    <div class="show_container">
      <div class="d-flex flex-row-nowrap align-items-center">
           <h1 class="pb-2"> {{question.title}} </h1>
@@ -18,6 +19,16 @@
      </div>
      <p> {{question.content}} </p> 
      <br>
+     {% for comment in question.comments %}
+          <div class="question_response">
+               <div class="d-flex align-items-center">
+                    <img class="avatar" src="https://randomuser.me/api/portraits/men/82.jpg"></img>
+                    <p> Luc </p>
+                    <span> {{comment.createdAt | ago}} </span>
+               </div>
+               <p class=""> {{comment.content}} </p>
+          </div>
+     {% endfor %}
      <h3> Votre réponse </h3>
      <div class="comment_form">
           {{form_start(comment_form)}}
