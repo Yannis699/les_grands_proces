@@ -4,36 +4,40 @@
 
 {% block body %}
     {% include ('home/partials/_nav.html.twig') %}
+    
+    
+<div class="forum_container container-fluid">
+    <div class="row">
     {% include ('home/partials/_sidebar.html.twig') %}
 
-<ul>
+<ul class="col-9 mt-3 text-light">
     {% for question in questions %}
-        <a href="{{path('question_show', { id: question.id}) }}" class="d-flex">
-            <div></div>
-            <div class="flex-fill d-flex flex-column">
-                <i class = "fas fa-arrow-up"> </i>
-                    <p> Demandé par Louis </p>
-                    <span> {{question.createdAt | ago(locale="fr")}} </span>
-                <i class= "fas fa-arrow-down"> </i>
+        <a href="{{path('question_show', { id: question.id}) }}" class="d-flex text-decoration-none">
+            <div class=" topic_container border col-12 mt-3 d-flex flex-column rounded">
                 <div>
-                    <h4> {{question.title}} </h4>
+                    <h4 class="py-2">{{question.title}} </h4>
                     <p> {{question.content}} <p>
                 </div>
+                    <p class="timer_topic"> Question posée par Louis <span> {{question.createdAt | ago(locale="fr")}} </span></p>
                 <div class="d-flex flex-row align-items-between">
                     <div class="d-flex flex-row justify-content-center">
                         <img class="ask_question_avatar" src=""/>
-                        <p> test </p>
                     </div>
-                    <div class="d-flex flew-row justify-content-center">
-                        <i class="far fa-comment"></i>
-                        <p> {{question.answers }} </p>
+                    <div class="d-flex justify-content-around py-2 col-4">
+                        <i class = "fas fa-arrow-up mt-1"> </i>
+                        <i class= "fas fa-arrow-down mt-1 px-2 "> </i>
+                        <i class="far fa-comment px-1 mt-1"></i>
+                        <p class=""> {{question.answers }} réponse(s) </p>
+                        <i class="fa-solid fa-share-nodes mt-1"></i>
+                        <p> 0 partage </p>
                     </div>
                 </div>
             </div>
         </a>
     {% endfor %}
-</ul>
-
+    </ul>
+    </div>
+</div>
 {% include ('home/partials/_footer.html.twig') %}
 
 {% endblock %}

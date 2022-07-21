@@ -3,11 +3,16 @@
 {% block title %}Hello LoginController!{% endblock %}
 
 {% block body %}
-    <div class="signup_form">
-        <h2 class="signup_inscription"> Inscription </h2>
-        {{form_start(sign_up_form)}}
-        {{form_rest(sign_up_form)}}
-        <button class="inscription_btn">S'inscrire </button>
-        {{form_end(sign_up_form)}}
+    {% include ('home/partials/_nav.html.twig') %}
+
+    <div class="signup_container container-fluid d-flex justify-content-center border">
+        <div class="signup_form text-light col-5 border mt-5">
+            <h2 class="signup_inscription p-3 d-flex justify-content-center"> Inscription </h2>
+            {{form_start(sign_up_form)}}
+            {{form_rest(sign_up_form)}}
+                <button class="inscription_btn btn btn-primary ">S'inscrire </button>
+            {{form_end(sign_up_form)}}
+        </div>
     </div>
+
 {% endblock %}

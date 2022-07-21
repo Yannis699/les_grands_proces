@@ -1,0 +1,17 @@
+.forum_container {
+    background-color: white!important;
+    a {
+        color: black!important;
+    }
+}
+
+.topic_container {
+    background-color: rgb(245, 245, 245);
+    box-shadow: 2px 2px 0px rgb(200, 198, 198); 
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+.timer_topic {
+    font-style: italic !important;
+}

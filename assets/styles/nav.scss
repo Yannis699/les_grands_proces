@@ -1,6 +1,7 @@
 nav{
-    background: rgba(115, 118, 123,0.1);
-    opacity: 0.4;
+    background: black;
+    z-index:6;
+    opacity: 0.8;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -8,11 +9,18 @@ nav{
     height: 70px;
     padding: 0 100px;
   }
+
+  .img-user-nav {
+    max-width: 35px;
+    margin-left: 40em!important;
+  }
+
   nav .logo{
     color: #fff;
     font-size: 30px;
     font-weight: 600;
     letter-spacing: -1px;
+    margin-bottom: 8px!important;
   }
   nav .nav-items{
     display: flex;
@@ -32,7 +40,7 @@ nav{
     color: #fff;
   }
   nav .nav-items li a:hover{
-    color: #ffcc00;
+    color: #fef5d0;
   }
   nav form{
     display: flex;
