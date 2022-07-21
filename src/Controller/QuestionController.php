@@ -40,21 +40,9 @@ class QuestionController extends AbstractController
     }
 
     #[Route('/question/{id}', name: 'question_show')]
-    public function show(Request $request, string $id): Response
+    public function show(Question $question): Response
     {
-        $question = [
-            
-                'title' => 'Ceci est ma question 2', 
-                'content' => 'test content 3',
-                'upvotes' => 23, 
-                'author' => [
-                    'name' => 'Yannis Cristini', 
-                    'avatar' => 'https://randomuser.me/api/portraits/men/79.jpg'
-                ],
-                'answers' => 18
-            
-        ];
-
+        
         return $this->render('question/show.html.twig', [
             'question' => $question
         ]);
