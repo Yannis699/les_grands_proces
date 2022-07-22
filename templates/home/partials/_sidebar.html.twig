@@ -1,6 +1,33 @@
-<div class="sidebar d-flex flex-column">
-    <button class="btn btn-primary btn-icon-primary">
-        <i class="fas fa-question mr-5">
-        <span> Poser une question </span>
-    </button>
+<div class="sidebar_container col-2 text-light border">
+    <a href="{{path('question_form')}}" class="text-decoration-none">
+        <i class="fa-solid fa-circle-question"></i>
+        <span class="fs-4 px-2"> Poser une question </span>
+    </a>
+    <ul class="sidebar_nav py-3"> 
+        <li class="side_active fs-5"> Liste des questions </li>
+        <li class="side_item fs-5"> Questions populaires </li>
+    </ul>
+        <a href="#" class="text-decoration-none">
+        <i class="fa-solid fa-handshake-angle"></i>
+        <span class="fs-4 px-2"> Vos contributions </span>
+        </a>
+    <ul class="sidebar_nav py-3">  
+        <li class="fs-5"> Vos questions </li>
+        <li class="fs-5"> Vos réponses </li>
+    </ul>
+        </ul>
+        <a href="#" class="text-decoration-none">
+        <i class="fa-solid fa-circle-question"></i>
+        <span class="fs-4 px-2"> Par période </span>
+    </a>
+    <ul class="sidebar_nav py-3"> 
+        <input type="checkbox"/>
+        <label for="antiquity">Antiquité</label><br>
+        <input type="checkbox"/>
+        <label for="antiquity">Moyen Age</label><br>
+        <input type="checkbox"/>
+        <label for="antiquity">Histoire moderne</label><br>
+        <input type="checkbox"/>
+        <label for="antiquity">Histoire contemporaine</label><br>
+    </ul>
 </div>
