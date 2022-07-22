@@ -28,7 +28,6 @@ class QuestionController extends AbstractController
 
         if($formQuestion->isSubmitted()&& $formQuestion->isValid()) {
            $question->setAnswers(0);
-           $question->setRating(0);
            $question->setUser($user);
            $question->setCreatedAt(new \DateTimeImmutable());
            $em->persist($question);
