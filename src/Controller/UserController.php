@@ -18,7 +18,7 @@ class UserController extends AbstractController
         ]);
     }
 
-    #[Route('/user{id}', name: 'app_user')]
+    #[Route('/user{id}', name: 'user')]
     #[IsGranted('IS_AUTHENTICATED_FULLY')]
     public function userProfile(): Response
     {

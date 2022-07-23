@@ -18,7 +18,7 @@
                     <h4 class="py-2">{{question.title}} </h4>
                     <p> {{question.content}} <p>
                 </div>
-                    <p class="timer_topic"> Question posée par {{ question.user.fullname }} <span> {{question.createdAt | ago(locale="fr")}} </span></p>
+                    <p class="timer_topic"> Question posée par <a href="{{path ('user', { id: question.user.id})}}">{{ question.user.fullname }} </a> <span> {{question.createdAt | ago(locale="fr")}} </span></p>
                 <div class="d-flex flex-row align-items-between">
                     <div class="d-flex flex-row justify-content-center">
                         <img class="ask_question_avatar" src=" {{question.user.picture}}"/>
