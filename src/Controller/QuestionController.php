@@ -57,7 +57,7 @@ class QuestionController extends AbstractController
 
         if($commentForm->isSubmitted() && $commentForm->isValid()) {
             $comment->setCreatedAt(new \DateTimeImmutable);
-            $comment->setRating(0);
+            $comment->setRating(1);
             $comment->setQuestion($question);
             $comment->setUser($user);
             $question->setAnswers($question->getAnswers() + 1);

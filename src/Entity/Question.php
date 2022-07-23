@@ -30,10 +30,11 @@ class Question
     private ?\DateTimeImmutable $createdAt = null;
 
     #[ORM\Column]
-    private ?int $rating = null;
+    private ?int $rating = 1;
 
     #[ORM\Column]
     private ?int $answers = null;
+
 
     #[ORM\OneToMany(mappedBy: 'question', targetEntity: Comment::class, orphanRemoval: true)]
     private Collection $comments;
@@ -93,7 +94,7 @@ class Question
         return $this->rating;
     }
 
-    public function setRating(int $rating): self
+    public function setRating(int $rating): ?self
     {
         $this->rating = $rating;
 

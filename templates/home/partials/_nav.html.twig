@@ -10,7 +10,10 @@
         <li><a href="{{path('forum')}}">Forum</a></li>
          {%- if is_granted('IS_AUTHENTICATED_FULLY') -%}
             <div class="d-flex justify-content-center">
-                <img class="img-fluid img-user-nav avatar" src="{{ app.user.picture}}">
+                <a href="{{path('current_user')}}">
+                   <img class="img-fluid img-user-nav avatar" src="{{ app.user.picture}}">
+                </a>
+               
                 <li> 
                     <a href="{{ path('logout') }}"> Déconnexion </a>
                 </li>
