@@ -12,9 +12,7 @@ class ForumController extends AbstractController
     #[Route('/forum', name: 'forum')]
     public function index(QuestionRepository $questionRepository): Response
     {
-        $questions = $questionRepository->findAll(
-            ( array('createdAt' => 'DESC') )
-        );
+        $questions = $questionRepository->findBy([], ['createdAt' => 'DESC']);
 
         return $this->render('forum/index.html.twig', [
             'questions' => $questions,

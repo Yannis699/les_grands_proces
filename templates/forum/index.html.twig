@@ -21,9 +21,9 @@
                     <p class="timer_topic"> Question posée par {{ question.user.fullname }} <span> {{question.createdAt | ago(locale="fr")}} </span></p>
                 <div class="d-flex  align-items-between">
                     <div class="d-flex  justify-content-center">
-                       <a href="{{ path('user', {id : question.user.id }) }}">
+                        <!--  <a href="{{ path('user', {id: question.user.id}) }}"></a> -->
                         <img class="ask_question_avatar" src=" {{question.user.picture}}"/>
-                      </a>
+                      
                     </div>
                     <div class="d-flex justify-content-around py-2 col-4">
                         <i class = "fas fa-arrow-up mt-1"> </i>

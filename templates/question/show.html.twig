@@ -15,7 +15,7 @@
    <div class="container-fluid mt-5 d-flex justify-content-center">
      <div class="col-9 show_container">
      <div class="d-flex flex-row-nowrap align-items-center border d-flex justify-content-center">
-          <img class="avatar py-3" src="https://randomuser.me/api/portraits/men/65.jpg">
+          <img class="avatar py-3" src="{{ question.user.picture}} ">
           <h1 class="px-4"> {{question.title}} </h1>
      </div>
      <p class="p-3 mt-3"> {{question.content}} </p> 
@@ -23,8 +23,10 @@
      {% for comment in question.comments %}
           <div class="question_response py-3 col-6">
                <div class="d-flex align-items-center px-5">
-                    <img class="avatar " src="https://randomuser.me/api/portraits/men/82.jpg"></img>
-                    <p class="px-2"> Luc Montagner </p><br>
+                    <a href="{{ path('user', {id: comment.user.id}) }}">
+                    <img class="avatar " src=" {{comment.user.picture }}"></img>
+                    </a>
+                    <p class="px-2"> {{ comment.user.fullname }} </p><br>
                </div>
                <p class="px-5 py-2"> "{{comment.content}}" </p>
                 <span class="px-5 py-3"> {{comment.createdAt | ago(locale="fr")}} </span>
