@@ -4,25 +4,15 @@
 
 {% block body %}
     {% include ('home/partials/_nav.html.twig') %}
-     <div class="">
-    <a href="{{path('question_form')}}">
-        <i class="">
-        <span> Poser une question </span>
-    </a>
-    <ul class="sidebar_nav py-3"> 
-        <a class="side_active"> Liste des questions </a>
-        <a> Mes questions </a>
-        <a> Mes réponses</a>
-    </ul>
-</div>
-    <h1 class="form_ask_title"> Posez votre question </h1>
+
+    <h1 class="form_ask_title text-light px-3 mt-5"> Posez votre question </h1>
     {{ form_start(form_ask_question)}}
     <div class="form_ask_question m-3">
         {{ form_rest(form_ask_question)}}
-    </div>
-        <button>
+        <button class="btn btn-primary">
             Partager
         </button>
+    </div>
         {{ form_end(form_ask_question) }}
 
         {% include ('home/partials/_footer.html.twig') %}
