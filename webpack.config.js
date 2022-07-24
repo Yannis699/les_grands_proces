@@ -102,6 +102,8 @@ Encore
     // processes files ending in .scss or .sass
     .enableSassLoader()
 
+    .enableVueLoader()
+
     // processes files ending in .less
     .enableLessLoader()
 

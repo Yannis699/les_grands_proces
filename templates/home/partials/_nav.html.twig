@@ -1,0 +1,41 @@
+ <nav> 
+      <div class="menu-icon">
+        <span class="fas fa-bars"></span>
+      </div>
+
+      <div class="logo m-0 p-0">Les grands procès</div>
+
+      <div class="nav-items">
+        <li><a href="{{path('home')}}">Articles</a></li>
+        <li><a href="{{path('forum')}}">Forum</a></li>
+         {%- if is_granted('IS_AUTHENTICATED_FULLY') -%}
+            <div class="d-flex justify-content-center">
+                <a href="{{path('current_user')}}">
+                   <img class="img-fluid img-user-nav avatar" src="{{ app.user.picture}}">
+                </a>
+               
+                <li> 
+                    <a href="{{ path('logout') }}"> Déconnexion </a>
+                </li>
+            </div>
+        {% else %}
+        <div class="connexion_nav">
+            <li><a href="{{ path('login') }}">Se connecter</a></li>
+        </div>
+
+      {%- endif -%}
+     </div>
+
+      <div class="search-icon">
+        <span class="fas fa-search"></span>
+      </div>
+
+      <div class="cancel-icon">
+        <span class="fas fa-times"></span>
+      </div>
+
+      <form action="#">
+        <input type="search" class="search-data" placeholder="Recherche par articles de presse" required>
+        <button type="submit" class="fas fa-search"></button>
+      </form>
+</nav> 

@@ -3,12 +3,45 @@
 {% block title %} {{question.title }} {% endblock %}
 
 {% block body %}
-   <div class="show_container">
-     <div class="d-flex flex-row-nowrap align-items-center">
-          <h1 class="pb-2"> {{question.title}} </h1>
-          <div class="question-tag"> Question </div>
-          <img class="avatar" src="https://randomuser.me/api/portraits/men/65.jpg">
+     {% include ('home/partials/_nav.html.twig') %}
+  	{% for success, messages in app.flashes %}
+		{% for message in messages %}
+			<div class="flash_success flash_message fs-2 alert alert-{{ success }}">
+				{{ message }}
+		     </div>
+		{% endfor %}
+	{% endfor %}
+
+   <div class="container-fluid mt-5 d-flex justify-content-center">
+     <div class="col-9 show_container">
+     <div class="d-flex flex-row-nowrap align-items-center border d-flex justify-content-center">
+          <img class="avatar py-3" src="{{ question.user.picture}} ">
+          <h1 class="px-4"> {{question.title}} </h1>
      </div>
-     <p> {{question.content}} </p> 
+     <p class="p-3 mt-3"> {{question.content}} </p> 
+     <br>
+     {% for comment in question.comments %}
+          <div class="question_response py-3 col-6">
+               <div class="d-flex align-items-center px-5">
+                    <a href="{{ path('user', {id: comment.user.id}) }}">
+                    <img class="avatar " src=" {{comment.user.picture }}"></img>
+                    </a>
+                    <p class="px-2"> {{ comment.user.fullname }} </p><br>
+               </div>
+               <p class="px-5 py-2"> "{{comment.content}}" </p>
+                <span class="px-5 py-3"> {{comment.createdAt | ago(locale="fr")}} </span>
+          </div>
+     {% endfor %}
+     {% if form is defined %}
+     <h3 class="px-3"> Votre réponse </h3>
+     <div class="comment_form px_3 border">
+          {{form_start(form, { 'attr': {'class': 'show_form'} }) }}
+          {{form_widget(form , { 'attr': {'class': 'test'} }) }}
+               <button class="btn btn-primary"> soumettre</button>
+          {{form_end(form)}}
+     </div>
+     {% endif %}
    </div>
+   </div>
+
 {% endblock %}

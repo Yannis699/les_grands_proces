@@ -25,6 +25,9 @@
     },
     "dependencies": {
         "@popperjs/core": "^2.11.5",
-        "less-loader": "^11.0.0"
+        "less-loader": "^11.0.0",
+        "vue": "^2.5",
+        "vue-loader": "^15.9.5",
+        "vue-template-compiler": "^2.7.8"
     }
 }

@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page de profil!{% endblock %}
+
+{% block body %}
+    <div class="">
+        <h2> Page de profil </h2>
+        {{form_start(form)}}
+        {{form_rest(form)}}
+        <button class="btn btn-primary"> Mettre à jour </button>
+        {{ form_end(form) }}
+    </div>
+
+    <div class="my_participation">
+        <h3> Mes questions </h3>
+            <ul> 
+                {% for question in app.user.questions %}
+                    <li> {{question.title }} </li>
+                {% endfor %}
+            </ul>
+        </h3> Mes réponses </h3>
+               <ul> 
+                {% for comment in app.user.comments %}
+                    <li> {{ comment.content | slice(0, 40) }} ... </li>
+                {% endfor %}
+            </ul>
+
+    </div>
+{% endblock %}
